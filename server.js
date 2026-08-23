@@ -287,12 +287,17 @@ app.get("*", (req, res, next) => {
   });
 });
 
-app.listen(PORT, () => {
-  console.log(`\n🧪 GENAI ESCAPE server running at http://localhost:${PORT}`);
-  if (!isKeyConfigured) {
-    console.log("⚠️  GEMINI_API_KEY not set. AI features (hints, evaluation, generation) will return a graceful fallback message.");
-    console.log("   Add your key to the .env file to enable them.\n");
-  } else {
-    console.log("✅ Gemini API key detected. AI features enabled.\n");
-  }
-});
+if (require.main === module) {
+  app.listen(PORT, () => {
+    console.log(`\n🧪 GENAI ESCAPE server running at http://localhost:${PORT}`);
+
+    if (!isKeyConfigured) {
+      console.log("⚠️  GEMINI_API_KEY not set. AI features (hints, evaluation, generation) will return a graceful fallback message.");
+      console.log("   Add your key to the .env file to enable them.\n");
+    } else {
+      console.log("✅ Gemini API key detected. AI features enabled.\n");
+    }
+  });
+}
+
+module.exports = app;
