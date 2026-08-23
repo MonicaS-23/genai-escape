@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Room 01 — The Origin | GENAI ESCAPE</title>
+<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="css/animations.css" />
+<link rel="stylesheet" href="css/rooms.css" />
+</head>
+<body>
+
+<div class="bg-grid"></div>
+
+<div class="hud">
+  <div class="hud-inner">
+    <div class="hud-stats">
+      <div class="hud-stat"><span class="label">Time</span><span class="value" id="hud-timer">00:00</span></div>
+      <div class="hud-stat"><span class="label">Score</span><span class="value" id="hud-score">0</span></div>
+      <div class="hud-stat"><span class="label">Rooms</span><span class="value" id="hud-rooms">0/5</span></div>
+    </div>
+    <div class="hud-progress"><div class="hud-progress-bar" id="hud-progress-bar"></div></div>
+    <button class="sound-toggle" id="soundToggle">🔊</button>
+  </div>
+</div>
+
+<div class="container">
+  <div class="room-header fade-in">
+    <span class="badge">Room 01 / 05</span>
+    <h1>THE ORIGIN</h1>
+    <p class="concept">What is Generative AI?</p>
+  </div>
+
+  <div class="content-cards">
+    <div class="content-card glass-card"><div class="icon">📖</div><h4>Definition</h4><p>Generative AI creates new content — text, images, audio, video, or code — rather than just analyzing existing data.</p></div>
+    <div class="content-card glass-card"><div class="icon">🔀</div><h4>Traditional vs Generative</h4><p>Traditional AI classifies, predicts, or detects. Generative AI produces brand-new, original output.</p></div>
+    <div class="content-card glass-card"><div class="icon">✍️</div><h4>Text Generation</h4><p>Models like GPT and Gemini write essays, code, and conversations.</p></div>
+    <div class="content-card glass-card"><div class="icon">🖼️</div><h4>Image Generation</h4><p>Tools like DALL-E turn text prompts into original images.</p></div>
+    <div class="content-card glass-card"><div class="icon">🔊</div><h4>Audio Generation</h4><p>AI can compose music or synthesize realistic speech.</p></div>
+    <div class="content-card glass-card"><div class="icon">🎬</div><h4>Video Generation</h4><p>Emerging models generate short video clips from prompts.</p></div>
+    <div class="content-card glass-card"><div class="icon">💻</div><h4>Code Generation</h4><p>AI assistants write, explain, and debug code from natural language.</p></div>
+  </div>
+
+  <div class="puzzle-box glass-card">
+    <h3>🔒 ACCESS CHALLENGE</h3>
+    <p style="color:var(--gray); margin-bottom:10px;">Which of the following is the <strong>BEST</strong> example of Generative AI?</p>
+    <div class="options-list" id="optionsList">
+      <button class="option-btn" data-value="A"><span class="opt-letter">A</span> Detecting spam emails</button>
+      <button class="option-btn" data-value="B"><span class="opt-letter">B</span> Predicting tomorrow's temperature</button>
+      <button class="option-btn" data-value="C"><span class="opt-letter">C</span> Creating an image from a text description</button>
+      <button class="option-btn" data-value="D"><span class="opt-letter">D</span> Calculating attendance percentage</button>
+    </div>
+    <div class="feedback-box" id="feedbackBox"></div>
+
+    <div class="ai-assistant glass-card">
+      <div class="ai-label">
+        <div class="ai-avatar">🤖</div>
+        <div>
+          <h4>AI LAB ASSISTANT</h4>
+          <p>Stuck? Ask for a hint (−5 score).</p>
+        </div>
+      </div>
+      <button class="btn btn-ghost btn-sm" id="hintBtn">GET AI HINT</button>
+    </div>
+    <div class="hint-text" id="hintText"></div>
+
+    <div class="code-fragment-reveal" id="fragmentReveal">
+      <p style="color:var(--gray);">✅ ACCESS GRANTED — CODE FRAGMENT RECOVERED</p>
+      <div class="fragment-num">7</div>
+      <p style="color:var(--gray-dim); font-size:0.8rem;">Fragment 1 of 5</p>
+    </div>
+  </div>
+
+  <div class="room-nav">
+    <a href="story.html" class="btn btn-ghost">← Mission Briefing</a>
+    <button class="btn btn-primary" id="nextRoomBtn" disabled>NEXT ROOM →</button>
+  </div>
+</div>
+
+<footer><div class="container">GENAI ESCAPE — Room 01: The Origin</div></footer>
+
+<script src="js/game.js"></script>
+<script src="js/room1.js"></script>
+</body>
+</html>

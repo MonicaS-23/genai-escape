@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>You Escaped! — GENAI ESCAPE</title>
+<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="css/animations.css" />
+<link rel="stylesheet" href="css/rooms.css" />
+</head>
+<body>
+
+<div class="bg-grid"></div>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="index.html" class="brand"><span class="brand-icon">🧬</span> GENAI ESCAPE</a>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="explorer.html">AI Knowledge Hub</a>
+    </div>
+    <button class="nav-toggle" id="navToggle">☰</button>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="result-hero fade-in">
+    <span class="badge">Mission Complete</span>
+    <h1>🎉 YOU ESCAPED!</h1>
+    <p style="color:var(--gray); font-size:1.05rem;">GEN-X LABORATORY HAS BEEN UNLOCKED.</p>
+    <div class="big-code" id="revealedCode">73295</div>
+  </div>
+
+  <div class="stat-grid">
+    <div class="stat-box glass-card"><div class="val" id="statScore">0</div><div class="lbl">Final Score</div></div>
+    <div class="stat-box glass-card"><div class="val" id="statTime">00:00</div><div class="lbl">Time Taken</div></div>
+    <div class="stat-box glass-card"><div class="val" id="statRooms">0/5</div><div class="lbl">Rooms Completed</div></div>
+    <div class="stat-box glass-card"><div class="val" id="statHints">0</div><div class="lbl">Hints Used</div></div>
+    <div class="stat-box glass-card"><div class="val" id="statPromptScore">—</div><div class="lbl">AI Prompt Score</div></div>
+  </div>
+
+  <div class="summary-box glass-card">
+    <h3 style="margin-bottom:14px;">📘 What You Learned</h3>
+    <p>You didn't just escape the lab. You learned how Generative AI works, how to communicate with it, how models differ, how content is generated, and how to use AI responsibly.</p>
+  </div>
+
+  <div class="result-actions">
+    <button class="btn btn-primary" id="playAgainBtn">🔁 PLAY AGAIN</button>
+    <a href="explorer.html" class="btn btn-outline">🧠 EXPLORE GENAI</a>
+    <a href="explorer.html" class="btn btn-ghost">📚 VIEW KNOWLEDGE HUB</a>
+  </div>
+</div>
+
+<footer><div class="container">GENAI ESCAPE — Mission Complete</div></footer>
+
+<script src="js/game.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const state = getGameState();
+
+    document.getElementById("statScore").textContent = state.score;
+    document.getElementById("statTime").textContent = formatTime(getElapsedTime());
+    document.getElementById("statRooms").textContent = `${state.completedRooms.length}/5`;
+    document.getElementById("statHints").textContent = state.hintsUsed;
+    document.getElementById("statPromptScore").textContent =
+      state.finalPromptScore !== null && state.finalPromptScore !== undefined ? `${state.finalPromptScore}/100` : "—";
+
+    if (state.completed) {
+      launchConfetti();
+      SFX.escape();
+    } else {
+      // If someone lands here without finishing, send them back gently
+      const notice = document.createElement("div");
+      notice.className = "feedback-box info show";
+      notice.style.margin = "20px auto";
+      notice.style.maxWidth = "500px";
+      notice.textContent = "You haven't completed the final challenge yet. Head back to finish your escape!";
+      document.querySelector(".summary-box").before(notice);
+    }
+
+    document.getElementById("playAgainBtn").addEventListener("click", () => {
+      resetGame();
+      window.location.href = "story.html";
+    });
+  });
+</script>
+</body>
+</html>

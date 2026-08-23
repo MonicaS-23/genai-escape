@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AI Knowledge Hub — GENAI ESCAPE</title>
+<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="css/animations.css" />
+<link rel="stylesheet" href="css/rooms.css" />
+</head>
+<body>
+
+<div class="bg-grid"></div>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="index.html" class="brand"><span class="brand-icon">🧬</span> GENAI ESCAPE</a>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="explorer.html">AI Knowledge Hub</a>
+      <a href="story.html">Enter The Lab</a>
+    </div>
+    <button class="nav-toggle" id="navToggle">☰</button>
+  </div>
+</nav>
+
+<div class="container" style="padding-top:50px;">
+  <div class="section-head fade-in">
+    <span class="badge">Knowledge Hub</span>
+    <h2>GENAI KNOWLEDGE HUB</h2>
+    <p>Everything you need to understand Generative AI — plus a live Gemini-powered playground.</p>
+  </div>
+
+  <!-- ============ ACCORDION SECTIONS ============ -->
+  <div class="hub-section" id="accordionWrap">
+
+    <div class="accordion-item glass-card open">
+      <button class="accordion-head"><span>WHAT IS GENERATIVE AI?</span><span class="chev">▾</span></button>
+      <div class="accordion-body">
+        <p>Generative AI refers to models that create new content — text, images, audio, video, or code — rather than simply classifying or predicting from existing data. It learns patterns from massive datasets and uses them to produce original outputs.</p>
+      </div>
+    </div>
+
+    <div class="accordion-item glass-card">
+      <button class="accordion-head"><span>HOW DOES GENERATIVE AI WORK?</span><span class="chev">▾</span></button>
+      <div class="accordion-body">
+        <p>Most modern generative models are built on neural networks — many are transformer-based. They are trained on huge datasets to predict the "next likely piece" of content (the next word, pixel, or audio sample), and through this process they learn deep statistical patterns of language, imagery, and structure that let them generate coherent new content.</p>
+      </div>
+    </div>
+
+    <div class="accordion-item glass-card">
+      <button class="accordion-head"><span>TYPES OF GENERATIVE AI</span><span class="chev">▾</span></button>
+      <div class="accordion-body">
+        <ul style="padding-left:18px; list-style:disc;">
+          <li><strong>Text</strong> — essays, chat, summaries, translation</li>
+          <li><strong>Image</strong> — art, product mockups, photorealistic scenes</li>
+          <li><strong>Audio</strong> — music composition, voice synthesis</li>
+          <li><strong>Video</strong> — short generated clips and animations</li>
+          <li><strong>Code</strong> — code generation, debugging, explanation</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="accordion-item glass-card">
+      <button class="accordion-head"><span>POPULAR MODELS</span><span class="chev">▾</span></button>
+      <div class="accordion-body">
+        <p>GPT (OpenAI), Gemini (Google), Claude (Anthropic), Llama (Meta, open-weight), and DALL-E (OpenAI, image generation) are among the most widely used Generative AI model families today. Capabilities and versions evolve quickly, so always check official sources for the latest specifics.</p>
+      </div>
+    </div>
+
+    <div class="accordion-item glass-card">
+      <button class="accordion-head"><span>PROMPT ENGINEERING</span><span class="chev">▾</span></button>
+      <div class="accordion-body">
+        <p>Prompt engineering is the practice of crafting clear, structured instructions to get better AI outputs. Strong prompts typically define a <strong>role</strong>, provide <strong>context</strong>, state the <strong>task</strong>, add <strong>constraints</strong>, and specify the desired <strong>output format</strong>. Few-shot prompts include examples; zero-shot prompts don't.</p>
+      </div>
+    </div>
+
+    <div class="accordion-item glass-card">
+      <button class="accordion-head"><span>APPLICATIONS</span><span class="chev">▾</span></button>
+      <div class="accordion-body">
+        <ul style="padding-left:18px; list-style:disc;">
+          <li>Education — tutoring, personalized explanations</li>
+          <li>Healthcare — drafting notes, summarizing research</li>
+          <li>Software Development — code generation, debugging</li>
+          <li>Marketing — copywriting, ad variations</li>
+          <li>Design — rapid prototyping, image concepts</li>
+          <li>Entertainment — story and game content</li>
+          <li>Research — literature summaries, brainstorming</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="accordion-item glass-card">
+      <button class="accordion-head"><span>ADVANTAGES</span><span class="chev">▾</span></button>
+      <div class="accordion-body">
+        <p>Speed, scale, creativity assistance, personalization, and lowering the barrier to producing high-quality drafts across text, code, and design.</p>
+      </div>
+    </div>
+
+    <div class="accordion-item glass-card">
+      <button class="accordion-head"><span>LIMITATIONS</span><span class="chev">▾</span></button>
+      <div class="accordion-body">
+        <p>Hallucinations, inconsistent factual accuracy, sensitivity to prompt phrasing, limited reasoning in edge cases, and dependence on the quality/scope of training data.</p>
+      </div>
+    </div>
+
+    <div class="accordion-item glass-card">
+      <button class="accordion-head"><span>ETHICS &amp; RISKS</span><span class="chev">▾</span></button>
+      <div class="accordion-body">
+        <p>Bias, misinformation, deepfakes, privacy concerns, copyright questions, and security risks all require responsible design, transparency, and human oversight when deploying Generative AI.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ============ TRY GENERATIVE AI DEMO ============ -->
+  <div class="section-head" style="margin-top:70px;">
+    <span class="badge">Live Demo</span>
+    <h2>TRY GENERATIVE AI</h2>
+    <p>This box makes a real call to the Gemini API through our backend.</p>
+  </div>
+
+  <div class="puzzle-box glass-card">
+    <div class="field">
+      <label>What do you want the AI to explain?</label>
+      <input type="text" id="demoTopic" placeholder="e.g. neural networks, prompt engineering, diffusion models..." />
+    </div>
+    <div class="field">
+      <label>Mode</label>
+      <select id="demoMode">
+        <option value="simple">Simple Explanation</option>
+        <option value="detailed">Detailed Explanation</option>
+        <option value="examples">Examples</option>
+        <option value="quiz">Quiz Me</option>
+        <option value="interview">Interview Me</option>
+      </select>
+    </div>
+    <div style="display:flex; gap:12px; flex-wrap:wrap;">
+      <button class="btn btn-primary" id="demoGenerateBtn">⚡ GENERATE</button>
+      <button class="btn btn-ghost" id="demoCopyBtn">📋 COPY RESPONSE</button>
+      <button class="btn btn-ghost" id="demoClearBtn">🗑 CLEAR</button>
+    </div>
+    <div class="output-box" id="demoOutput" style="margin-top:20px;">Your AI-generated response will appear here...</div>
+  </div>
+
+  <!-- ============ QUIZ GENERATOR ============ -->
+  <div class="section-head" style="margin-top:70px;">
+    <span class="badge">Live Demo</span>
+    <h2>GENERATE QUIZ</h2>
+    <p>Enter any Generative AI topic and Gemini will build a 5-question quiz.</p>
+  </div>
+
+  <div class="puzzle-box glass-card">
+    <div class="field">
+      <label>Quiz Topic</label>
+      <input type="text" id="quizTopic" placeholder="e.g. transformer models, ethics in AI, prompt engineering..." />
+    </div>
+    <button class="btn btn-primary" id="quizGenerateBtn">🧩 GENERATE QUIZ</button>
+    <div id="quizContainer" style="margin-top:20px;"></div>
+  </div>
+
+</div>
+
+<footer><div class="container">GENAI ESCAPE — AI Knowledge Hub</div></footer>
+
+<script src="js/game.js"></script>
+<script src="js/explorer.js"></script>
+</body>
+</html>

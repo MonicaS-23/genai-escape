@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Room 05 — The Dark Side | GENAI ESCAPE</title>
+<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="css/animations.css" />
+<link rel="stylesheet" href="css/rooms.css" />
+</head>
+<body>
+
+<div class="bg-grid"></div>
+
+<div class="hud">
+  <div class="hud-inner">
+    <div class="hud-stats">
+      <div class="hud-stat"><span class="label">Time</span><span class="value" id="hud-timer">00:00</span></div>
+      <div class="hud-stat"><span class="label">Score</span><span class="value" id="hud-score">0</span></div>
+      <div class="hud-stat"><span class="label">Rooms</span><span class="value" id="hud-rooms">0/5</span></div>
+    </div>
+    <div class="hud-progress"><div class="hud-progress-bar" id="hud-progress-bar"></div></div>
+    <button class="sound-toggle" id="soundToggle">🔊</button>
+  </div>
+</div>
+
+<div class="container">
+  <div class="room-header fade-in">
+    <span class="badge">Room 05 / 05</span>
+    <h1>THE DARK SIDE</h1>
+    <p class="concept">Responsible Generative AI</p>
+  </div>
+
+  <div class="content-cards">
+    <div class="content-card glass-card"><div class="icon">🌀</div><h4>Hallucinations</h4><p>AI can generate confident but false information.</p></div>
+    <div class="content-card glass-card"><div class="icon">⚖️</div><h4>Bias</h4><p>Models can reflect and amplify biases in their training data.</p></div>
+    <div class="content-card glass-card"><div class="icon">🎭</div><h4>Deepfakes</h4><p>Synthetic media can convincingly impersonate real people.</p></div>
+    <div class="content-card glass-card"><div class="icon">🔒</div><h4>Privacy</h4><p>Generated content can leak or infer sensitive personal data.</p></div>
+    <div class="content-card glass-card"><div class="icon">©️</div><h4>Copyright</h4><p>Training data and generated output raise IP and ownership questions.</p></div>
+    <div class="content-card glass-card"><div class="icon">📰</div><h4>Misinformation</h4><p>Generated content can spread false narratives at scale.</p></div>
+  </div>
+
+  <div class="puzzle-box glass-card">
+    <h3>🔒 FINAL SEAL — SCENARIO CHALLENGE</h3>
+    <p style="color:var(--gray); margin-bottom:16px;">Answer at least 70% of these real-world scenarios correctly to unlock the last fragment.</p>
+
+    <div class="scenario-progress" id="scenarioProgress"></div>
+    <div id="scenarioContainer"></div>
+
+    <div class="feedback-box" id="feedbackBox"></div>
+
+    <div class="ai-assistant glass-card">
+      <div class="ai-label">
+        <div class="ai-avatar">🤖</div>
+        <div><h4>AI LAB ASSISTANT</h4><p>Unsure about the current scenario? (−5 score)</p></div>
+      </div>
+      <button class="btn btn-ghost btn-sm" id="hintBtn">GET AI HINT</button>
+    </div>
+    <div class="hint-text" id="hintText"></div>
+
+    <div class="code-fragment-reveal" id="fragmentReveal">
+      <p style="color:var(--gray);">✅ ACCESS GRANTED — CODE FRAGMENT RECOVERED</p>
+      <div class="fragment-num">5</div>
+      <p style="color:var(--gray-dim); font-size:0.8rem;">Fragment 5 of 5 — ALL FRAGMENTS COLLECTED</p>
+    </div>
+  </div>
+
+  <div class="room-nav">
+    <a href="room4.html" class="btn btn-ghost">← Room 4</a>
+    <button class="btn btn-primary" id="nextRoomBtn" disabled>FINAL CHALLENGE →</button>
+  </div>
+</div>
+
+<footer><div class="container">GENAI ESCAPE — Room 05: The Dark Side</div></footer>
+
+<script src="js/game.js"></script>
+<script src="js/room5.js"></script>
+</body>
+</html>

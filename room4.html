@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Room 04 — The Creation Chamber | GENAI ESCAPE</title>
+<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="css/animations.css" />
+<link rel="stylesheet" href="css/rooms.css" />
+</head>
+<body>
+
+<div class="bg-grid"></div>
+
+<div class="hud">
+  <div class="hud-inner">
+    <div class="hud-stats">
+      <div class="hud-stat"><span class="label">Time</span><span class="value" id="hud-timer">00:00</span></div>
+      <div class="hud-stat"><span class="label">Score</span><span class="value" id="hud-score">0</span></div>
+      <div class="hud-stat"><span class="label">Rooms</span><span class="value" id="hud-rooms">0/5</span></div>
+    </div>
+    <div class="hud-progress"><div class="hud-progress-bar" id="hud-progress-bar"></div></div>
+    <button class="sound-toggle" id="soundToggle">🔊</button>
+  </div>
+</div>
+
+<div class="container">
+  <div class="room-header fade-in">
+    <span class="badge">Room 04 / 05</span>
+    <h1>THE CREATION CHAMBER</h1>
+    <p class="concept">Types of Generative AI</p>
+  </div>
+
+  <div class="puzzle-box glass-card">
+    <h3>🧪 GENERATION LAB</h3>
+    <p style="color:var(--gray); margin-bottom:16px;">Enter a topic, then explore how different modalities would generate content about it.</p>
+
+    <div class="field">
+      <label>Create something about</label>
+      <input type="text" id="chamberTopic" placeholder="e.g. a robot exploring Mars" />
+    </div>
+
+    <div class="tabs modality-tabs" id="modalityTabs">
+      <button class="tab-btn active" data-modality="text">TEXT</button>
+      <button class="tab-btn" data-modality="image">IMAGE</button>
+      <button class="tab-btn" data-modality="audio">AUDIO</button>
+      <button class="tab-btn" data-modality="video">VIDEO</button>
+      <button class="tab-btn" data-modality="code">CODE</button>
+    </div>
+
+    <button class="btn btn-primary" id="generateBtn" style="margin-bottom:18px;">⚡ GENERATE</button>
+
+    <div class="output-box chamber-output" id="chamberOutput">Choose a modality and click Generate to see how it works...</div>
+
+    <hr style="border-color: var(--border-soft); margin: 30px 0;" />
+
+    <h3 style="margin-bottom:14px;">🔍 IDENTIFY THE MODALITY</h3>
+    <p style="color:var(--gray); margin-bottom:14px;">Below are five short descriptions of generated outputs. Identify which modality each one is.</p>
+
+    <div id="modalityQuiz"></div>
+    <div class="feedback-box" id="feedbackBox"></div>
+
+    <div class="ai-assistant glass-card">
+      <div class="ai-label">
+        <div class="ai-avatar">🤖</div>
+        <div><h4>AI LAB ASSISTANT</h4><p>Stuck identifying modalities? (−5 score)</p></div>
+      </div>
+      <button class="btn btn-ghost btn-sm" id="hintBtn">GET AI HINT</button>
+    </div>
+    <div class="hint-text" id="hintText"></div>
+
+    <div class="code-fragment-reveal" id="fragmentReveal">
+      <p style="color:var(--gray);">✅ ACCESS GRANTED — CODE FRAGMENT RECOVERED</p>
+      <div class="fragment-num">9</div>
+      <p style="color:var(--gray-dim); font-size:0.8rem;">Fragment 4 of 5</p>
+    </div>
+  </div>
+
+  <div class="room-nav">
+    <a href="room3.html" class="btn btn-ghost">← Room 3</a>
+    <button class="btn btn-primary" id="nextRoomBtn" disabled>NEXT ROOM →</button>
+  </div>
+</div>
+
+<footer><div class="container">GENAI ESCAPE — Room 04: The Creation Chamber</div></footer>
+
+<script src="js/game.js"></script>
+<script src="js/room4.js"></script>
+</body>
+</html>

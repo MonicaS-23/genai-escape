@@ -1,0 +1,149 @@
+/* ===========================================================
+   GENAI ESCAPE — Animations
+   =========================================================== */
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+}
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 20px rgba(139,92,246,0.35); }
+  50% { box-shadow: 0 0 40px rgba(34,211,238,0.55); }
+}
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+@keyframes shake {
+  10%, 90% { transform: translateX(-2px); }
+  20%, 80% { transform: translateX(4px); }
+  30%, 50%, 70% { transform: translateX(-8px); }
+  40%, 60% { transform: translateX(8px); }
+}
+@keyframes successPulse {
+  0% { transform: scale(1); }
+  40% { transform: scale(1.06); }
+  100% { transform: scale(1); }
+}
+@keyframes gridMove {
+  from { background-position: 0 0; }
+  to { background-position: 60px 60px; }
+}
+@keyframes drift {
+  0% { transform: translate(0,0); }
+  33% { transform: translate(18px,-14px); }
+  66% { transform: translate(-14px,10px); }
+  100% { transform: translate(0,0); }
+}
+@keyframes confettiFall {
+  0% { transform: translateY(-10vh) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(110vh) rotate(540deg); opacity: 0.9; }
+}
+@keyframes typeCursor {
+  50% { opacity: 0; }
+}
+@keyframes barGrow {
+  from { width: 0; }
+}
+
+.fade-in { animation: fadeIn 0.6s ease both; }
+.slide-up { animation: slideUp 0.6s ease both; }
+.float { animation: float 5s ease-in-out infinite; }
+.pulse-glow { animation: pulseGlow 2.4s ease-in-out infinite; }
+.spin { animation: spin 1s linear infinite; }
+.shake-anim { animation: shake 0.5s ease; }
+.success-anim { animation: successPulse 0.5s ease; }
+
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.3s; }
+.delay-4 { animation-delay: 0.4s; }
+.delay-5 { animation-delay: 0.5s; }
+
+/* ---------- Background grid + particles ---------- */
+.bg-grid {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background-image:
+    linear-gradient(rgba(139,92,246,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(139,92,246,0.06) 1px, transparent 1px);
+  background-size: 60px 60px;
+  animation: gridMove 12s linear infinite;
+  pointer-events: none;
+}
+
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(34,211,238,0.9), transparent 70%);
+  pointer-events: none;
+  animation: drift 8s ease-in-out infinite;
+}
+
+.node {
+  position: absolute;
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--cyan);
+  box-shadow: 0 0 14px var(--cyan);
+  animation: float 6s ease-in-out infinite;
+}
+.node::after {
+  content: '';
+  position: absolute;
+  top: 50%; left: 100%;
+  width: 60px; height: 1px;
+  background: linear-gradient(90deg, var(--cyan), transparent);
+  transform: translateY(-50%);
+}
+
+/* ---------- Loading spinner ---------- */
+.spinner {
+  width: 18px; height: 18px;
+  border: 2.5px solid rgba(255,255,255,0.25);
+  border-top-color: var(--white);
+  border-radius: 50%;
+  display: inline-block;
+  animation: spin 0.7s linear infinite;
+}
+
+/* ---------- Confetti ---------- */
+.confetti-piece {
+  position: fixed;
+  top: -20px;
+  width: 8px; height: 14px;
+  z-index: 500;
+  animation: confettiFall linear forwards;
+  pointer-events: none;
+}
+
+/* ---------- Unlock flash ---------- */
+.unlock-flash {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle, rgba(34,211,238,0.25), transparent 60%);
+  z-index: 400;
+  pointer-events: none;
+  animation: fadeIn 0.3s ease forwards, fadeOutFlash 1.2s ease 0.3s forwards;
+}
+@keyframes fadeOutFlash {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+/* ---------- Typing cursor ---------- */
+.type-cursor {
+  display: inline-block;
+  width: 8px;
+  background: var(--cyan);
+  animation: typeCursor 0.8s step-end infinite;
+}

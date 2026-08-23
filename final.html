@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Final Challenge — GENAI ESCAPE</title>
+<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="css/animations.css" />
+<link rel="stylesheet" href="css/rooms.css" />
+</head>
+<body>
+
+<div class="bg-grid"></div>
+
+<div class="hud">
+  <div class="hud-inner">
+    <div class="hud-stats">
+      <div class="hud-stat"><span class="label">Time</span><span class="value" id="hud-timer">00:00</span></div>
+      <div class="hud-stat"><span class="label">Score</span><span class="value" id="hud-score">0</span></div>
+      <div class="hud-stat"><span class="label">Rooms</span><span class="value" id="hud-rooms">0/5</span></div>
+    </div>
+    <div class="hud-progress"><div class="hud-progress-bar" id="hud-progress-bar"></div></div>
+    <button class="sound-toggle" id="soundToggle">🔊</button>
+  </div>
+</div>
+
+<div class="container">
+  <div class="room-header fade-in">
+    <span class="badge">Final Challenge</span>
+    <h1>MASTER PROMPT</h1>
+    <p class="concept">You have collected all five fragments.</p>
+  </div>
+
+  <div class="puzzle-box glass-card">
+    <h3 style="text-align:center; margin-bottom:20px;">RECOVERED FRAGMENTS</h3>
+    <div class="fragments-row" id="fragmentsRow"></div>
+
+    <div id="codeStage">
+      <h3 style="text-align:center;">🔐 ENTER THE SECRET EXIT CODE</h3>
+      <p style="text-align:center; color:var(--gray); margin-top:8px;">Combine the fragments in room order (Room 1 → Room 5) to form the 5-digit code.</p>
+      <div class="code-input-row">
+        <input type="text" maxlength="1" inputmode="numeric" class="code-digit" />
+        <input type="text" maxlength="1" inputmode="numeric" class="code-digit" />
+        <input type="text" maxlength="1" inputmode="numeric" class="code-digit" />
+        <input type="text" maxlength="1" inputmode="numeric" class="code-digit" />
+        <input type="text" maxlength="1" inputmode="numeric" class="code-digit" />
+      </div>
+      <div style="text-align:center;">
+        <button class="btn btn-primary" id="submitCodeBtn">🔓 UNLOCK</button>
+      </div>
+      <div class="feedback-box" id="codeFeedback"></div>
+    </div>
+
+    <div id="promptStage" style="display:none; margin-top:30px;">
+      <h3 style="text-align:center;">🧠 THE MASTER PROMPT CHALLENGE</h3>
+      <div class="mission-box" style="margin-top:18px;">
+        <h3>Your task</h3>
+        <p style="color:var(--gray); margin:0;">Create a prompt that instructs an AI to explain Generative AI to a beginner using: simple language, three real-world examples, one limitation, one ethical concern, and a short summary.</p>
+      </div>
+      <div class="field" style="margin-top:20px;">
+        <label>Your Master Prompt</label>
+        <textarea id="masterPromptInput" rows="6" placeholder="Write your full prompt here..."></textarea>
+      </div>
+      <button class="btn btn-primary btn-block" id="evaluateMasterBtn">⚡ SUBMIT TO GEMINI</button>
+      <div class="feedback-box" id="masterFeedback"></div>
+    </div>
+  </div>
+
+  <div class="room-nav">
+    <a href="room5.html" class="btn btn-ghost">← Room 5</a>
+    <a href="result.html" class="btn btn-primary" id="viewResultBtn" style="display:none;">VIEW RESULT →</a>
+  </div>
+</div>
+
+<footer><div class="container">GENAI ESCAPE — Final Challenge</div></footer>
+
+<script src="js/game.js"></script>
+<script src="js/final.js"></script>
+</body>
+</html>
